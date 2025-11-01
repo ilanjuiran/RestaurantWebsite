@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drish Restaurant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">Drish</div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#sales-report" id="salesReportLink" style="display: none;">Sales Report</a></li>
+                </ul>
+                <div class="cart-icon-container" id="cartIconContainer" style="display: none;">
+                    <button class="cart-icon" id="cartIcon">
+                        🛒
+                        <span class="cart-badge" id="cartBadge">0</span>
+                    </button>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to Drish</h1>
+            <p class="hero-subtitle">Experience culinary excellence in every bite</p>
+            <a href="#menu" class="cta-button">View Our Menu</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Us</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>At Drish, we've been serving exceptional cuisine for over a decade. Our passion for food and dedication to quality ingredients has made us a favorite destination for food lovers.</p>
+                    <p>Our chefs craft each dish with care, combining traditional techniques with modern innovation to create unforgettable dining experiences.</p>
+                    <ul class="features">
+                        <li>✓ Fresh, locally sourced ingredients</li>
+                        <li>✓ Expert chefs with years of experience</li>
+                        <li>✓ Warm, welcoming atmosphere</li>
+                        <li>✓ Award-winning wine selection</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">🍽️</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Menu</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="menu-tabs">
+                <button class="tab-button active" data-category="all">All</button>
+                <button class="tab-button" data-category="appetizers">Appetizers</button>
+                <button class="tab-button" data-category="mains">Main Courses</button>
+                <button class="tab-button" data-category="desserts">Desserts</button>
+                <button class="tab-button" data-category="drinks">Drinks</button>
+            </div>
+            <div class="menu-grid">
+                <!-- Appetizers -->
+                <div class="menu-item" data-category="appetizers" data-id="1" data-name="Samosas" data-price="60">
+                    <div class="menu-item-image">🥟</div>
+                    <div class="menu-item-content">
+                        <h3>Samosas</h3>
+                        <p>Crispy fried pastries filled with spiced potatoes and peas, served with tamarind chutney</p>
+                        <div class="menu-item-footer">
+                            <span class="price">₹60</span>
+                            <button class="add-to-cart-btn" data-id="1">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="appetizers" data-id="2" data-name="Paneer Tikka" data-price="180">
+                    <div class="menu-item-image">🧀</div>
+                    <div class="menu-item-content">
+                        <h3>Paneer Tikka</h3>
+                        <p>Marinated cottage cheese cubes grilled to perfection with bell peppers and onions</p>
+                        <div class="menu-item-footer">
+                            <span class="price">₹180</span>
+                            <button class="add-to-cart-btn" data-id="2">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="appetizers" data-id="3" data-name="Chicken Pakora" data-price="160">
+                    <div class="menu-item-image">🍗</div>
+                    <div class="menu-item-content">
+                        <h3>Chicken Pakora</h3>
+                        <p>Spiced chicken pieces coated in gram flour batter and deep-fried until golden</p>
+                        <div class="menu-item-footer">
+                            <span class="price">₹160</span>
+                            <button class="add-to-cart-btn" data-id="3">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="appetizers" data-id="4" data-name="Aloo Tikki" data-price="80">
+                    <div class="menu-item-image">🥔</div>
+                    <div class="menu-item-content">
+                        <h3>Aloo Tikki</h3>
+                        <p>Spiced potato patties served with yogurt, tamarind, and mint chutney</p>
+                        <div class="menu-item-footer">
+                            <span class="price">₹80</span>
+                            <button class="add-to-cart-btn" data-id="4">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Courses -->
+                <div class="menu-item" data-category="mains" data-id="5" data-name="Butter Chicken" data-price="320">
+                    <div class="menu-item-image">🍛</div>
+                    <div class="menu-item-content">
+                        <h3>Butter Chicken</h3>
+                        <p>Creamy tomato-based curry with tender chicken pieces, served with basmati rice and naan</p>
+                        <div class="menu-item-footer">
+                            <span class="price">₹320</span>
+                            <button class="add-to-cart-btn" data-id="5">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="mains" data-id="6" data-name="Chicken Biryani" data-price="280">
+                    <div class="menu-item-image">🍚</div>
+                    <div class="menu-item-content">
+                        <h3>Chicken Biryani</h3>
+                        <p>Aromatic basmati rice cooked with tender chicken, spices, and herbs, served with raita</p>
+                        <div class="menu-item-footer">
+                            <span class="price">₹280</span>
+                            <button class="add-to-cart-btn" data-id="6">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="mains" data-id="7" data-name="Dal Makhani" data-price="200">
+                    <div class="menu-item-image">🫘</div>
+                    <div class="menu-item-content">
+                        <h3>Dal Makhani</h3>
+                        <p>Creamy black lentils cooked overnight with butter and cream, served with rice and naan</p>
+                        <div class="menu-item-footer">
+                            <span class="price">₹200</span>
+                            <button class="add-to-cart-btn" data-id="7">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="mains" data-id="8" data-name="Palak Paneer" data-price="240">
+                    <div class="menu-item-image">🥬</div>
+                    <div class="menu-item-content">
+                        <h3>Palak Paneer</h3>
+                        <p>Fresh spinach curry with soft cottage cheese cubes, served with rice or roti</p>
+                        <div class="menu-item-footer">
+                            <span class="price">₹240</span>
+                            <button class="add-to-cart-btn" data-id="8">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="mains" data-id="9" data-name="Rogan Josh" data-price="300">
+                    <div class="menu-item-image">🍲</div>
+                    <div class="menu-item-content">
+                        <h3>Rogan Josh</h3>
+                        <p>Kashmiri lamb curry cooked in yogurt and aromatic spices, served with naan</p>
+                        <div class="menu-item-footer">
+                            <span class="price">₹300</span>
+                            <button class="add-to-cart-btn" data-id="9">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="mains" data-id="10" data-name="Tandoori Chicken" data-price="350">
+                    <div class="menu-item-image">🍖</div>
+                    <div class="menu-item-content">
+                        <h3>Tandoori Chicken</h3>
+                        <p>Marinated chicken cooked in traditional clay oven, served with mint chutney and onions</p>
+                        <div class="menu-item-footer">
+                            <span class="price">₹350</span>
+                            <button class="add-to-cart-btn" data-id="10">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-item" data-category="desserts" data-id="11" data-name="Gulab Jamun" data-price="90">
+                    <div class="menu-item-image">🍡</div>
+                    <div class="menu-item-content">
+                        <h3>Gulab Jamun</h3>
+                        <p>Soft milk-based dumplings soaked in rose-scented sugar syrup, served warm</p>
+                        <div class="menu-item-footer">
+                            <span class="price">₹90</span>
+                            <button class="add-to-cart-btn" data-id="11">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="desserts" data-id="12" data-name="Kheer" data-price="100">
+                    <div class="menu-item-image">🥛</div>
+                    <div class="menu-item-content">
+                        <h3>Kheer</h3>
+                        <p>Traditional rice pudding made with milk, sugar, and cardamom, garnished with nuts</p>
+                        <div class="menu-item-footer">
+                            <span class="price">₹100</span>
+                            <button class="add-to-cart-btn" data-id="12">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="desserts" data-id="13" data-name="Rasmalai" data-price="110">
+                    <div class="menu-item-image">🍮</div>
+                    <div class="menu-item-content">
+                        <h3>Rasmalai</h3>
+                        <p>Soft cottage cheese dumplings in sweetened, thickened milk flavored with cardamom</p>
+                        <div class="menu-item-footer">
+                            <span class="price">₹110</span>
+                            <button class="add-to-cart-btn" data-id="13">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="desserts" data-id="14" data-name="Jalebi" data-price="80">
+                    <div class="menu-item-image">🍯</div>
+                    <div class="menu-item-content">
+                        <h3>Jalebi</h3>
+                        <p>Crispy, spiral-shaped sweets deep-fried and soaked in sugar syrup, served hot</p>
+                        <div class="menu-item-footer">
+                            <span class="price">₹80</span>
+                            <button class="add-to-cart-btn" data-id="14">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drinks -->
+                <div class="menu-item" data-category="drinks" data-id="15" data-name="Mango Lassi" data-price="120">
+                    <div class="menu-item-image">🥭</div>
+                    <div class="menu-item-content">
+                        <h3>Mango Lassi</h3>
+                        <p>Refreshing yogurt-based drink blended with fresh mango and a hint of cardamom</p>
+                        <div class="menu-item-footer">
+                            <span class="price">₹120</span>
+                            <button class="add-to-cart-btn" data-id="15">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="drinks" data-id="16" data-name="Masala Chai" data-price="50">
+                    <div class="menu-item-image">☕</div>
+                    <div class="menu-item-content">
+                        <h3>Masala Chai</h3>
+                        <p>Traditional spiced tea with milk, cardamom, ginger, and aromatic spices</p>
+                        <div class="menu-item-footer">
+                            <span class="price">₹50</span>
+                            <button class="add-to-cart-btn" data-id="16">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="drinks" data-id="17" data-name="Nimbu Pani" data-price="60">
+                    <div class="menu-item-image">🍋</div>
+                    <div class="menu-item-content">
+                        <h3>Nimbu Pani</h3>
+                        <p>Fresh lemonade with mint, black salt, and a touch of roasted cumin</p>
+                        <div class="menu-item-footer">
+                            <span class="price">₹60</span>
+                            <button class="add-to-cart-btn" data-id="17">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item" data-category="drinks" data-id="18" data-name="Thandai" data-price="90">
+                    <div class="menu-item-image">🥤</div>
+                    <div class="menu-item-content">
+                        <h3>Thandai</h3>
+                        <p>Cooling milk-based drink with almonds, fennel, cardamom, and rose petals</p>
+                        <div class="menu-item-footer">
+                            <span class="price">₹90</span>
+                            <button class="add-to-cart-btn" data-id="18">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📍 Location</h3>
+                        <p>123 Main Street<br>Chennai, Tamil Nadu 600001</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📞 Phone</h3>
+                        <p>(555) 123-4567</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>✉️ Email</h3>
+                        <p>info@drish.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>🕒 Hours</h3>
+                        <p>Monday - Thursday: 11:00 AM - 10:00 PM<br>
+                           Friday - Saturday: 11:00 AM - 11:00 PM<br>
+                           Sunday: 12:00 PM - 9:00 PM</p>
+                    </div>
+                </div>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section id="checkout" class="checkout" style="display: none;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Checkout</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="checkout-content">
+                <div class="checkout-form-wrapper">
+                    <form class="checkout-form" id="checkoutForm">
+                        <h3>Customer Information</h3>
+                        <div class="form-group">
+                            <input type="text" id="customerName" name="customerName" placeholder="Full Name (Optional)">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="customerEmail" name="customerEmail" placeholder="Email Address (Optional)">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="customerPhone" name="customerPhone" placeholder="Phone Number (Optional)">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="customerAddress" name="customerAddress" rows="3" placeholder="Delivery Address (Optional)"></textarea>
+                        </div>
+                        <h3>Payment Method</h3>
+                        <div class="payment-methods">
+                            <label class="payment-option">
+                                <input type="radio" name="paymentMethod" value="cash" checked>
+                                <span>Cash</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="paymentMethod" value="card">
+                                <span>Card</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="paymentMethod" value="qr">
+                                <span>QR Code</span>
+                            </label>
+                        </div>
+                        <button type="submit" class="submit-button">Place Order</button>
+                    </form>
+                </div>
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div id="checkoutItems"></div>
+                    <div class="order-totals">
+                        <div class="total-row">
+                            <span>Subtotal:</span>
+                            <span id="checkoutSubtotal">₹0</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Tax (8%):</span>
+                            <span id="checkoutTax">₹0</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Service Charge (5%):</span>
+                            <span id="checkoutService">₹0</span>
+                        </div>
+                        <div class="total-row total-final">
+                            <span>Total:</span>
+                            <span id="checkoutTotal">₹0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sales Report Section -->
+    <section id="sales-report" class="sales-report" style="display: none;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sales Report</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="sales-controls">
+                <button class="filter-btn active" data-period="today">Today</button>
+                <button class="filter-btn" data-period="week">This Week</button>
+                <button class="filter-btn" data-period="month">This Month</button>
+                <button class="filter-btn" data-period="all">All Time</button>
+                <button class="export-btn" id="exportSales">Export CSV</button>
+            </div>
+            <div class="sales-stats">
+                <div class="stat-card">
+                    <h3>Total Sales</h3>
+                    <p id="totalSales">₹0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Orders</h3>
+                    <p id="totalOrders">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Average Order</h3>
+                    <p id="averageOrder">₹0</p>
+                </div>
+            </div>
+            <div class="sales-content">
+                <div class="top-items">
+                    <h3>Top Selling Items</h3>
+                    <div id="topItemsList"></div>
+                </div>
+                <div class="order-history">
+                    <h3>Order History</h3>
+                    <div id="orderHistoryTable"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-totals">
+                <div class="total-row">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal">₹0</span>
+                </div>
+                <div class="total-row">
+                    <span>Tax (8%):</span>
+                    <span id="cartTax">₹0</span>
+                </div>
+                <div class="total-row">
+                    <span>Service Charge (5%):</span>
+                    <span id="cartService">₹0</span>
+                </div>
+                <div class="total-row total-final">
+                    <span>Total:</span>
+                    <span id="cartTotal">₹0</span>
+                </div>
+            </div>
+            <button class="checkout-btn" id="proceedCheckout">Proceed to Checkout</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- QR Code Modal -->
+    <div class="modal" id="qrModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Scan QR Code to Pay</h2>
+                <button class="close-modal" id="closeQRModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="qrCodeContainer"></div>
+                <p class="qr-amount">Amount: <strong id="qrAmount">₹0</strong></p>
+                <p class="qr-instructions">Scan with your payment app to complete the transaction</p>
+                <button class="confirm-payment-btn" id="confirmPayment">Confirm Payment</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Invoice Modal -->
+    <div class="modal" id="invoiceModal">
+        <div class="modal-content invoice-content">
+            <div class="modal-header">
+                <h2>Invoice</h2>
+                <div class="invoice-actions">
+                    <button class="print-btn" id="printInvoice">Print</button>
+                    <button class="close-modal" id="closeInvoiceModal">&times;</button>
+                </div>
+            </div>
+            <div class="modal-body" id="invoiceBody">
+                <!-- Invoice content will be generated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Drish</h3>
+                    <p>Creating memorable dining experiences since 2013</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Drish Restaurant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Embedded QR Code Generator - No external dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
